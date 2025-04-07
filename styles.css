@@ -1,0 +1,146 @@
+* {
+    font-family: "Nunito", sans-serif;
+
+    /* The following prevents any text on the page
+    from being highlightable by default. */
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ 
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #e6e6e6;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#toolbar-container {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 10vh;
+    /* background-color: red; */
+    align-items: end;
+    justify-content: center;
+    gap: 16px;
+}
+
+#canvas-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80vmin;
+    height: 85vh;
+}
+
+#canvas {
+    display: flex;
+    flex-direction: column;
+    width: 80vmin;
+    height: 80vmin;
+    border: 2px solid #dadada;
+}
+
+.canvas-row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 5vmin;
+}
+
+.canvas-cell {
+    width: 5vmin;
+    height: 5vmin;
+}
+
+.canvas-row .canvas-cell:nth-child(odd) {
+    background-color: white;
+}
+
+.canvas-row .canvas-cell:nth-child(even) {
+    background-color: #dedede;
+}
+
+.even-row .canvas-cell:nth-child(odd) {
+    background-color: #dedede;
+}
+
+.even-row .canvas-cell:nth-child(even) {
+    background-color: white;
+}
+
+.drawer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    height: 6vh;
+    min-width: calc(6vh);
+    border-radius: 5vh;
+    gap: 8px;
+}
+
+.option-button {
+    display: flex;
+    flex-direction: column;
+    width: 6vh;
+    height: 6vh;
+    border-radius: 5vh;
+    text-align: center;
+    line-height: 6vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.option-button:hover {
+    cursor: pointer;
+}
+
+input[type="color"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border: 0;
+    cursor: pointer;
+    background-color: transparent;
+    opacity: 0;
+    height: 100%;
+    padding: 0;
+    width: 100%;
+}
+
+.material-symbols-outlined {
+    color: black;
+    font-size: 3vh !important;
+}
+
+#color-picker-container {
+    display: grid;
+}
+
+#color-picker-container > * {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#color-icon {
+    margin-top: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+#pencil {
+    background-color: #f2f2f2;
+}

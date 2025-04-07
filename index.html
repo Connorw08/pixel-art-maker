@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pixel Art Maker</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes/cocoa.css">
+    <script type="module" src="/src/main.ts"></script>
+
+    <!-- Enables the `Nunito` font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+    <!-- Connects to Google Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&icon_names=colors,delete_forever,download,eraser_size_5,ink_eraser,stylus" />
+  </head>
+  <body>
+    <div id="container">
+      <!-- Tool bar -->
+      <div id="toolbar-container">
+        <!-- Color tool drawer -->
+        <div class="drawer" id="color-drawer">
+          <div class="option-button" id="color-picker-container">
+            <input id="color-picker" type="color" value="#f6b73c">
+            <span class="material-symbols-outlined" id="color-icon">
+              eraser_size_5
+            </span>
+          </input>
+          </div>
+        </div>
+        <!-- Options tool drawer -->
+        <div class="drawer" id="options-drawer">
+          <div class="option-button" id="pencil">
+            <span class="material-symbols-outlined">
+              stylus
+            </span>
+          </div>
+          <div class="option-button" id="bucket">
+            <span class="material-symbols-outlined">
+              colors
+            </span>
+          </div>
+          <div class="option-button" id="eraser">
+            <span class="material-symbols-outlined">
+              ink_eraser
+            </span>
+          </div>
+        </div>
+        <!-- Clear / save tool drawer -->
+        <div class="drawer" id="save-drawer">
+          <div class="option-button" id="clear">
+            <span class="material-symbols-outlined">
+              delete_forever
+            </span>
+          </div>
+          <div class="option-button" id="save">
+            <span class="material-symbols-outlined">
+              download
+            </span>
+          </div>
+        </div>
+      </div>
+      <!-- The canvas grid -->
+      <div id="canvas-container">
+        <div id="canvas">
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r0_c0"></div>
+            <div class="canvas-cell" id="r0_c1"></div>
+            <div class="canvas-cell" id="r0_c2"></div>
+            <div class="canvas-cell" id="r0_c3"></div>
+            <div class="canvas-cell" id="r0_c4"></div>
+            <div class="canvas-cell" id="r0_c5"></div>
+            <div class="canvas-cell" id="r0_c6"></div>
+            <div class="canvas-cell" id="r0_c7"></div>
+            <div class="canvas-cell" id="r0_c8"></div>
+            <div class="canvas-cell" id="r0_c9"></div>
+            <div class="canvas-cell" id="r0_c10"></div>
+            <div class="canvas-cell" id="r0_c11"></div>
+            <div class="canvas-cell" id="r0_c12"></div>
+            <div class="canvas-cell" id="r0_c13"></div>
+            <div class="canvas-cell" id="r0_c14"></div>
+            <div class="canvas-cell" id="r0_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r1_c0"></div>
+            <div class="canvas-cell" id="r1_c1"></div>
+            <div class="canvas-cell" id="r1_c2"></div>
+            <div class="canvas-cell" id="r1_c3"></div>
+            <div class="canvas-cell" id="r1_c4"></div>
+            <div class="canvas-cell" id="r1_c5"></div>
+            <div class="canvas-cell" id="r1_c6"></div>
+            <div class="canvas-cell" id="r1_c7"></div>
+            <div class="canvas-cell" id="r1_c8"></div>
+            <div class="canvas-cell" id="r1_c9"></div>
+            <div class="canvas-cell" id="r1_c10"></div>
+            <div class="canvas-cell" id="r1_c11"></div>
+            <div class="canvas-cell" id="r1_c12"></div>
+            <div class="canvas-cell" id="r1_c13"></div>
+            <div class="canvas-cell" id="r1_c14"></div>
+            <div class="canvas-cell" id="r1_c15"></div>
+          </div>
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r2_c0"></div>
+            <div class="canvas-cell" id="r2_c1"></div>
+            <div class="canvas-cell" id="r2_c2"></div>
+            <div class="canvas-cell" id="r2_c3"></div>
+            <div class="canvas-cell" id="r2_c4"></div>
+            <div class="canvas-cell" id="r2_c5"></div>
+            <div class="canvas-cell" id="r2_c6"></div>
+            <div class="canvas-cell" id="r2_c7"></div>
+            <div class="canvas-cell" id="r2_c8"></div>
+            <div class="canvas-cell" id="r2_c9"></div>
+            <div class="canvas-cell" id="r2_c10"></div>
+            <div class="canvas-cell" id="r2_c11"></div>
+            <div class="canvas-cell" id="r2_c12"></div>
+            <div class="canvas-cell" id="r2_c13"></div>
+            <div class="canvas-cell" id="r2_c14"></div>
+            <div class="canvas-cell" id="r2_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r3_c0"></div>
+            <div class="canvas-cell" id="r3_c1"></div>
+            <div class="canvas-cell" id="r3_c2"></div>
+            <div class="canvas-cell" id="r3_c3"></div>
+            <div class="canvas-cell" id="r3_c4"></div>
+            <div class="canvas-cell" id="r3_c5"></div>
+            <div class="canvas-cell" id="r3_c6"></div>
+            <div class="canvas-cell" id="r3_c7"></div>
+            <div class="canvas-cell" id="r3_c8"></div>
+            <div class="canvas-cell" id="r3_c9"></div>
+            <div class="canvas-cell" id="r3_c10"></div>
+            <div class="canvas-cell" id="r3_c11"></div>
+            <div class="canvas-cell" id="r3_c12"></div>
+            <div class="canvas-cell" id="r3_c13"></div>
+            <div class="canvas-cell" id="r3_c14"></div>
+            <div class="canvas-cell" id="r3_c15"></div>
+          </div>
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r4_c0"></div>
+            <div class="canvas-cell" id="r4_c1"></div>
+            <div class="canvas-cell" id="r4_c2"></div>
+            <div class="canvas-cell" id="r4_c3"></div>
+            <div class="canvas-cell" id="r4_c4"></div>
+            <div class="canvas-cell" id="r4_c5"></div>
+            <div class="canvas-cell" id="r4_c6"></div>
+            <div class="canvas-cell" id="r4_c7"></div>
+            <div class="canvas-cell" id="r4_c8"></div>
+            <div class="canvas-cell" id="r4_c9"></div>
+            <div class="canvas-cell" id="r4_c10"></div>
+            <div class="canvas-cell" id="r4_c11"></div>
+            <div class="canvas-cell" id="r4_c12"></div>
+            <div class="canvas-cell" id="r4_c13"></div>
+            <div class="canvas-cell" id="r4_c14"></div>
+            <div class="canvas-cell" id="r4_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r5_c0"></div>
+            <div class="canvas-cell" id="r5_c1"></div>
+            <div class="canvas-cell" id="r5_c2"></div>
+            <div class="canvas-cell" id="r5_c3"></div>
+            <div class="canvas-cell" id="r5_c4"></div>
+            <div class="canvas-cell" id="r5_c5"></div>
+            <div class="canvas-cell" id="r5_c6"></div>
+            <div class="canvas-cell" id="r5_c7"></div>
+            <div class="canvas-cell" id="r5_c8"></div>
+            <div class="canvas-cell" id="r5_c9"></div>
+            <div class="canvas-cell" id="r5_c10"></div>
+            <div class="canvas-cell" id="r5_c11"></div>
+            <div class="canvas-cell" id="r5_c12"></div>
+            <div class="canvas-cell" id="r5_c13"></div>
+            <div class="canvas-cell" id="r5_c14"></div>
+            <div class="canvas-cell" id="r5_c15"></div>
+          </div>
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r6_c0"></div>
+            <div class="canvas-cell" id="r6_c1"></div>
+            <div class="canvas-cell" id="r6_c2"></div>
+            <div class="canvas-cell" id="r6_c3"></div>
+            <div class="canvas-cell" id="r6_c4"></div>
+            <div class="canvas-cell" id="r6_c5"></div>
+            <div class="canvas-cell" id="r6_c6"></div>
+            <div class="canvas-cell" id="r6_c7"></div>
+            <div class="canvas-cell" id="r6_c8"></div>
+            <div class="canvas-cell" id="r6_c9"></div>
+            <div class="canvas-cell" id="r6_c10"></div>
+            <div class="canvas-cell" id="r6_c11"></div>
+            <div class="canvas-cell" id="r6_c12"></div>
+            <div class="canvas-cell" id="r6_c13"></div>
+            <div class="canvas-cell" id="r6_c14"></div>
+            <div class="canvas-cell" id="r6_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r7_c0"></div>  
+            <div class="canvas-cell" id="r7_c1"></div>
+            <div class="canvas-cell" id="r7_c2"></div>
+            <div class="canvas-cell" id="r7_c3"></div>
+            <div class="canvas-cell" id="r7_c4"></div>
+            <div class="canvas-cell" id="r7_c5"></div>
+            <div class="canvas-cell" id="r7_c6"></div>
+            <div class="canvas-cell" id="r7_c7"></div>
+            <div class="canvas-cell" id="r7_c8"></div>
+            <div class="canvas-cell" id="r7_c9"></div>
+            <div class="canvas-cell" id="r7_c10"></div>
+            <div class="canvas-cell" id="r7_c11"></div>
+            <div class="canvas-cell" id="r7_c12"></div>
+            <div class="canvas-cell" id="r7_c13"></div>
+            <div class="canvas-cell" id="r7_c14"></div>
+            <div class="canvas-cell" id="r7_c15"></div>
+          </div>
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r8_c0"></div>
+            <div class="canvas-cell" id="r8_c1"></div>
+            <div class="canvas-cell" id="r8_c2"></div>
+            <div class="canvas-cell" id="r8_c3"></div>
+            <div class="canvas-cell" id="r8_c4"></div>
+            <div class="canvas-cell" id="r8_c5"></div>
+            <div class="canvas-cell" id="r8_c6"></div>
+            <div class="canvas-cell" id="r8_c7"></div>
+            <div class="canvas-cell" id="r8_c8"></div>
+            <div class="canvas-cell" id="r8_c9"></div>
+            <div class="canvas-cell" id="r8_c10"></div>
+            <div class="canvas-cell" id="r8_c11"></div>
+            <div class="canvas-cell" id="r8_c12"></div>
+            <div class="canvas-cell" id="r8_c13"></div>
+            <div class="canvas-cell" id="r8_c14"></div>
+            <div class="canvas-cell" id="r8_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r9_c0"></div>  
+            <div class="canvas-cell" id="r9_c1"></div>
+            <div class="canvas-cell" id="r9_c2"></div>
+            <div class="canvas-cell" id="r9_c3"></div>
+            <div class="canvas-cell" id="r9_c4"></div>
+            <div class="canvas-cell" id="r9_c5"></div>
+            <div class="canvas-cell" id="r9_c6"></div>
+            <div class="canvas-cell" id="r9_c7"></div>
+            <div class="canvas-cell" id="r9_c8"></div>
+            <div class="canvas-cell" id="r9_c9"></div>
+            <div class="canvas-cell" id="r9_c10"></div>
+            <div class="canvas-cell" id="r9_c11"></div>
+            <div class="canvas-cell" id="r9_c12"></div>
+            <div class="canvas-cell" id="r9_c13"></div>
+            <div class="canvas-cell" id="r9_c14"></div>
+            <div class="canvas-cell" id="r9_c15"></div>
+          </div>
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r10_c0"></div>  
+            <div class="canvas-cell" id="r10_c1"></div>
+            <div class="canvas-cell" id="r10_c2"></div>
+            <div class="canvas-cell" id="r10_c3"></div>
+            <div class="canvas-cell" id="r10_c4"></div>
+            <div class="canvas-cell" id="r10_c5"></div>
+            <div class="canvas-cell" id="r10_c6"></div>
+            <div class="canvas-cell" id="r10_c7"></div>
+            <div class="canvas-cell" id="r10_c8"></div>
+            <div class="canvas-cell" id="r10_c9"></div>
+            <div class="canvas-cell" id="r10_c10"></div>
+            <div class="canvas-cell" id="r10_c11"></div>
+            <div class="canvas-cell" id="r10_c12"></div>
+            <div class="canvas-cell" id="r10_c13"></div>
+            <div class="canvas-cell" id="r10_c14"></div>
+            <div class="canvas-cell" id="r10_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r11_c0"></div>
+            <div class="canvas-cell" id="r11_c1"></div>
+            <div class="canvas-cell" id="r11_c2"></div>
+            <div class="canvas-cell" id="r11_c3"></div>
+            <div class="canvas-cell" id="r11_c4"></div>
+            <div class="canvas-cell" id="r11_c5"></div>
+            <div class="canvas-cell" id="r11_c6"></div>
+            <div class="canvas-cell" id="r11_c7"></div>
+            <div class="canvas-cell" id="r11_c8"></div>
+            <div class="canvas-cell" id="r11_c9"></div>
+            <div class="canvas-cell" id="r11_c10"></div>
+            <div class="canvas-cell" id="r11_c11"></div>
+            <div class="canvas-cell" id="r11_c12"></div>
+            <div class="canvas-cell" id="r11_c13"></div>
+            <div class="canvas-cell" id="r11_c14"></div>
+            <div class="canvas-cell" id="r11_c15"></div>
+          </div>
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r12_c0"></div>
+            <div class="canvas-cell" id="r12_c1"></div>
+            <div class="canvas-cell" id="r12_c2"></div>
+            <div class="canvas-cell" id="r12_c3"></div>
+            <div class="canvas-cell" id="r12_c4"></div>
+            <div class="canvas-cell" id="r12_c5"></div>
+            <div class="canvas-cell" id="r12_c6"></div>
+            <div class="canvas-cell" id="r12_c7"></div>
+            <div class="canvas-cell" id="r12_c8"></div>
+            <div class="canvas-cell" id="r12_c9"></div>
+            <div class="canvas-cell" id="r12_c10"></div>
+            <div class="canvas-cell" id="r12_c11"></div>
+            <div class="canvas-cell" id="r12_c12"></div>
+            <div class="canvas-cell" id="r12_c13"></div>
+            <div class="canvas-cell" id="r12_c14"></div>
+            <div class="canvas-cell" id="r12_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r13_c0"></div>
+            <div class="canvas-cell" id="r13_c1"></div>
+            <div class="canvas-cell" id="r13_c2"></div>
+            <div class="canvas-cell" id="r13_c3"></div>
+            <div class="canvas-cell" id="r13_c4"></div>
+            <div class="canvas-cell" id="r13_c5"></div>
+            <div class="canvas-cell" id="r13_c6"></div>
+            <div class="canvas-cell" id="r13_c7"></div>
+            <div class="canvas-cell" id="r13_c8"></div>
+            <div class="canvas-cell" id="r13_c9"></div>
+            <div class="canvas-cell" id="r13_c10"></div>
+            <div class="canvas-cell" id="r13_c11"></div>
+            <div class="canvas-cell" id="r13_c12"></div>
+            <div class="canvas-cell" id="r13_c13"></div>
+            <div class="canvas-cell" id="r13_c14"></div>
+            <div class="canvas-cell" id="r13_c15"></div>
+          </div>
+          <div class="canvas-row even-row">
+            <div class="canvas-cell" id="r14_c0"></div>
+            <div class="canvas-cell" id="r14_c1"></div>
+            <div class="canvas-cell" id="r14_c2"></div>
+            <div class="canvas-cell" id="r14_c3"></div>
+            <div class="canvas-cell" id="r14_c4"></div>
+            <div class="canvas-cell" id="r14_c5"></div>
+            <div class="canvas-cell" id="r14_c6"></div>
+            <div class="canvas-cell" id="r14_c7"></div>
+            <div class="canvas-cell" id="r14_c8"></div>
+            <div class="canvas-cell" id="r14_c9"></div>
+            <div class="canvas-cell" id="r14_c10"></div>
+            <div class="canvas-cell" id="r14_c11"></div>
+            <div class="canvas-cell" id="r14_c12"></div>
+            <div class="canvas-cell" id="r14_c13"></div>
+            <div class="canvas-cell" id="r14_c14"></div>
+            <div class="canvas-cell" id="r14_c15"></div>
+          </div>
+          <div class="canvas-row">
+            <div class="canvas-cell" id="r15_c0"></div>
+            <div class="canvas-cell" id="r15_c1"></div>
+            <div class="canvas-cell" id="r15_c2"></div>
+            <div class="canvas-cell" id="r15_c3"></div>
+            <div class="canvas-cell" id="r15_c4"></div>
+            <div class="canvas-cell" id="r15_c5"></div>
+            <div class="canvas-cell" id="r15_c6"></div>
+            <div class="canvas-cell" id="r15_c7"></div>
+            <div class="canvas-cell" id="r15_c8"></div>
+            <div class="canvas-cell" id="r15_c9"></div>
+            <div class="canvas-cell" id="r15_c10"></div>
+            <div class="canvas-cell" id="r15_c11"></div>
+            <div class="canvas-cell" id="r15_c12"></div>
+            <div class="canvas-cell" id="r15_c13"></div>
+            <div class="canvas-cell" id="r15_c14"></div>
+            <div class="canvas-cell" id="r15_c15"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
